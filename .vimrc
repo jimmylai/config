@@ -1,76 +1,38 @@
+"syntax color
 syntax on
-set ignorecase
-set ru
-set nu
-set showcmd
+set t_Co=256
+set background=dark
+colorscheme ir_black
+set number
+
+"hilight all searched keyword
 set hlsearch
-set cin
-set smartindent
-set nobackup
 
-hi Comment ctermfg=red
-iab fdd <C-R>=strftime("%Y/%m/%d")<CR>
+"highlight cursor line
+set cursorline
+highlight CursorLine term=NONE cterm=NONE ctermbg=DarkBlue
 
-autocmd BufRead,BufNewFile *.sh map <F10> :% w !bash<CR>
-autocmd BufRead,BufNewFile *.pl map <F10> :% w !perl<CR>
-autocmd BufRead,BufNewFile *.rb map <F10> :% w !ruby<CR>
-"let g:pylint_onwrite = 0
-"let g:pylint_show_rate = 0
-"let g:pylint_cwindow = 0
+"pylint auto check python file when saving file
 autocmd FileType python compiler pylint
-set sw=4 tabstop=4 smarttab expandtab
+let g:pylint_inline_highlight = 0
+let g:pylint_conventions = 0
+let g:pylint_warning = 0
+let g:pylint_signs = 1
 
-map t <C-w>
-map ,, :tabe %<CR>
-map qq :q<CR>
-map qa :wind q<CR>
-imap jj <ESC>
-imap jf <ESC>
-imap fj <ESC>
+"hilight selected text
+hi Visual cterm=NONE ctermbg=Green ctermfg=White
 
-"open A_test.X if current file name is A.X
-"open A.X if current file name is A_test.X
-function OpenCorrespondingFile()
-    let d = split(expand("%"), '_test')
-    if len(d) == 1
-        let name = expand("%:r") . "_test." . expand("%:e")
-    else
-        let name = d[0] . d[1]
-    endif
-    exec 'vsplit ' name
-endfunction
+"highlight searched keyword
+highlight Search cterm=NONE ctermfg=Green ctermbg=Red
 
-map ,v :call OpenCorrespondingFile()<C-M>
+"indent with 4 space
+filetype indent plugin on
+autocmd FileType python setlocal et sta sw=4 sts=4
 
-" TODO refactor
-function OpenCorrespondingFileH()
-    let d = split(expand("%"), '_test')
-    if len(d) == 1
-        let name = expand("%:r") . "_test." . expand("%:e")
-    else
-        let name = d[0] . d[1]
-    endif
-    exec 'split ' name
-endfunction
+"using python template file
+if expand("%") =~ ".*_test\.py"
+	autocmd BufNewFile *_test.py 0r ~/.vim/template/test.py
+elseif expand("%") =~ ".*\.py"
+	autocmd BufNewFile *.py 0r ~/.vim/template/production.py
+endif
 
-map ,h :call OpenCorrespondingFileH()<C-M>
-map ,n :call OpenCorrespondingFileH()<C-M>
-
-
-"autocmd BufRead,BufNewFile *.lisp so ~/.vim/ftplugin/lisp/limp.vim
-filetype plugin indent on
-filetype plugin on
-
-:set foldmethod=indent
-
-nnoremap <F12> :TlistToggle<CR>
-
-"use pydiction
-let g:pydiction_location = '~/.vim/pydiction/complete-dict'
-
-" map clipboard to the default register
-set clipboard=unnamed
-
-" temporarily highlight keyword 
-nmap <leader>* :syn match TempKeyword /\<<C-R>=expand("<cword>")<CR>\>/<CR>
-nmap <leader>c :syn clear TempKeyword<CR>
