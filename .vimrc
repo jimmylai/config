@@ -5,6 +5,9 @@ set background=dark
 colorscheme ir_black
 set number
 
+"ignore case when searching
+set ic
+
 "hilight all searched keyword
 set hlsearch
 
@@ -36,3 +39,5 @@ elseif expand("%") =~ ".*\.py"
 	autocmd BufNewFile *.py 0r ~/.vim/template/production.py
 endif
 
+"map shortcuts
+map qq :q<CR>
