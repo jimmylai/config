@@ -1,0 +1,32 @@
+[ui]
+username = noahsark@laptop
+editor = /usr/bin/vim
+
+[defaults]
+log = --color always
+diff = --color auto
+
+[extensions]
+color =
+fetch =
+convert =
+graphlog =
+bookmarks =
+mq =
+record =
+#hgattic = /etc/mercurial/attic.py
+rebase =
+transplant =
+prompt = ~/workspace/config/prompt.py
+
+[bookmarks]
+track.current = True
+
+[trusted]
+users = hg, csiesheep
+
+[tortoisehg]
+editor = /usr/bin/gvim
+
+[extdiff] 
+cmd.vdiff = kdiff3 
