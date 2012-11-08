@@ -2,7 +2,7 @@
 syntax on
 set t_Co=256
 set background=dark
-colorscheme ir_black
+colorscheme delek
 set number
 
 "ignore case when searching
