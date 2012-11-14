@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/noahsark/.storm'
+let g:netrw_dirhist_2='/home/noahsark/.vim'
+let g:netrw_dirhist_3='/home/noahsark/workspace/new_ner/util'
+let g:netrw_dirhist_4='/usr/local/lib/python2.7/dist-packages/jieba/posseg'

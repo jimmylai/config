@@ -16,11 +16,11 @@ set cursorline
 highlight CursorLine term=NONE cterm=NONE ctermbg=DarkBlue
 
 "pylint auto check python file when saving file
-autocmd FileType python compiler pylint
-let g:pylint_inline_highlight = 0
-let g:pylint_conventions = 0
-let g:pylint_warning = 0
-let g:pylint_signs = 1
+"autocmd FileType python compiler pylint
+"let g:pylint_inline_highlight = 0
+"let g:pylint_conventions = 0
+"let g:pylint_warning = 0
+"let g:pylint_signs = 1
 
 "hilight selected text
 hi Visual cterm=NONE ctermbg=Green ctermfg=White
