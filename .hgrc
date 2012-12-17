@@ -1,5 +1,5 @@
 [ui]
-username = noahsark@laptop
+username = noahsark
 editor = /usr/bin/vim
 
 [defaults]
@@ -14,16 +14,17 @@ graphlog =
 bookmarks =
 mq =
 record =
-#hgattic = /etc/mercurial/attic.py
+hgattic = ~/workspace/config/hgshelve.py
 rebase =
 transplant =
 prompt = ~/workspace/config/prompt.py
+#hgshelve = ~/workspace/config/hgshelve.py
 
 [bookmarks]
 track.current = True
 
 [trusted]
-users = hg, csiesheep
+users = hg
 
 [tortoisehg]
 editor = /usr/bin/gvim
