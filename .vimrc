@@ -3,6 +3,7 @@ syntax on
 set t_Co=256
 set background=dark
 colorscheme delek
+"colorscheme ir_black
 set number
 
 "ignore case when searching
