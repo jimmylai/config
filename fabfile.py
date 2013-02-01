@@ -37,3 +37,12 @@ def bash():
 def screen():
     local('cp .screenrc ~/')
     local('cp .tmux.conf ~/')
+
+
+@hosts('localhost')
+def all():
+    vim()
+    hg()
+    font()
+    bash()
+    screen()
