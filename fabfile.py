@@ -22,6 +22,11 @@ def hg():
 
 
 @hosts('localhost')
+def git():
+    local('cp .gitconfig ~/')
+
+
+@hosts('localhost')
 def font():
     local('sudo cp truetype/*.ttf /usr/share/fonts/truetype')
     local('fc-cache -fv')
