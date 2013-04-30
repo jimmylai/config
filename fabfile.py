@@ -4,7 +4,7 @@
 '''
 
 
-from fabric.api import cd, run, hosts, local
+from fabric.api import cd, run, hosts, local, prefix
 
 
 __author__ = 'noahsark'
