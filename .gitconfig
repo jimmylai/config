@@ -3,3 +3,5 @@
 	email = r97922028@ntu.edu.tw
 [color]
         diff = auto
+[alias]
+	st = status
