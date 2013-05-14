@@ -51,7 +51,7 @@ def screen():
 def all():
     vim()
     hg()
-    font()
+    #font()
     bash()
     screen()
 
