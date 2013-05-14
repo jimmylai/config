@@ -48,12 +48,13 @@ def screen():
 
 
 @hosts('localhost')
-def all():
+def setup():
     vim()
     hg()
     #font()
     bash()
     screen()
+    git()
 
 
 @hosts('localhost')
