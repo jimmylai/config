@@ -1,5 +1,6 @@
 alias tmux='tmux -2'
 alias tt='tmux attach -t '
+alias en='. ~/env/bin/activate'
 
 if [ -n "$PS1" ];
 then
