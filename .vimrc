@@ -32,6 +32,7 @@ highlight Search cterm=NONE ctermfg=Green ctermbg=Red
 "indent with 4 space
 filetype indent plugin on
 autocmd FileType python setlocal et sta sw=4 sts=4
+autocmd FileType html setlocal et sta sw=4 sts=4
 
 "using python template file
 if expand("%") =~ ".*_test\.py"
