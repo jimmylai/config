@@ -10,11 +10,12 @@ from fabric.api import cd, run, hosts, local, prefix
 __author__ = 'noahsark'
 
 
-VIRTUALENV_PATH = '/home/noahsark/env/bin/activate'
+VIRTUALENV_PATH = '~/env/bin/activate'
 
 
 @hosts('localhost')
 def vim():
+    local('cp .bash_profile ~/')
     local('cp .vimrc ~/')
     local('cp .vim ~/ -r')
 
@@ -63,4 +64,4 @@ def setup_python_package():
     packages = ['fabric', 'nose', 'coverage', 'ipython', 'pylint']
     for pkg in packages:
         with prefix('. %s' % VIRTUALENV_PATH):
-            run('pip install %s' % pkg)
+            local('pip install %s' % pkg)
