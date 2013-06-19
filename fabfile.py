@@ -5,6 +5,7 @@
 
 
 from fabric.api import cd, run, hosts, local, prefix
+import os
 
 
 __author__ = 'noahsark'
@@ -32,7 +33,11 @@ def git():
 
 @hosts('localhost')
 def font():
-    local('sudo cp truetype/*.ttf /usr/share/fonts/truetype')
+    dir_path = '/usr/share/fonts/truetype'
+    if not os.path.isdir(dir_path):
+        local('sudo mkdir %s' % dir_path)
+
+    local('sudo cp truetype/*.ttf %s' % dir_path)
     local('fc-cache -fv')
 
 
