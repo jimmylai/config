@@ -18,12 +18,17 @@ VIRTUALENV_PATH = '~/env/bin/activate'
 def vim():
     local('cp .bash_profile ~/')
     local('cp .vimrc ~/')
-    local('cp .vim ~/ -r')
+    local('cp -R .vim ~/')
 
 
 @hosts('localhost')
 def hg():
     local('cp .hgrc ~/')
+
+
+@hosts('localhost')
+def svn():
+    local('cp -R .subversion ~/')
 
 
 @hosts('localhost')
