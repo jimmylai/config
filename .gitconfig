@@ -1,9 +1,22 @@
-[user]
-	name = Jimmy Lai
-	email = r97922028@ntu.edu.tw
 [color]
         diff = auto
 	ui = true
 [alias]
 	st = status
 	ci = commit
+	br = branch
+	sl = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all --since='90 days ago'
+	co = checkout
+	amend = commit --amend --no-edit
+	pusho = !git push -u origin HEAD
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[http]
+	postBuffer = 1048576000
+[init]
+	defaultBranch = main
